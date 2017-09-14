@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import VideoList from './video/VideoList';
+import './channel/ChannelList.css';
+import ChannelList from './channel/ChannelList';
 
 class App extends Component {
   render() {
-    console.log('app render');
     return (
       <div className="App">
         <div className="App-header">
@@ -15,7 +15,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <VideoList />
+        <ChannelList />
       </div>
     );
   }
