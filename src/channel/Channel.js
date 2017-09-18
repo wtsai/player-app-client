@@ -10,8 +10,8 @@ class Channel extends Component {
     return (
       <div>
         <img
-          src= {this.state.src}
-          alt= {this.state.alt}
+          src={this.state.src}
+          alt={this.state.alt}
         />
       </div>
     );
