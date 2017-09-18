@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Api from './api';
+import Channel from './Channel';
 
 const api = new Api();
 
@@ -22,8 +23,7 @@ class ChannelList extends Component {
       <div>
           {
             this.state.channels.map((channel) => (
-              <
-                img className= "channelImage"
+              <Channel
                 key= {channel._id}
                 src= {channel.cover.default}
                 alt= {channel.name}
