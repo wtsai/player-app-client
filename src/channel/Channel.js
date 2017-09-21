@@ -12,6 +12,7 @@ class Channel extends Component {
         <img
           src={this.state.src}
           alt={this.state.alt}
+          onClick={this.state.onClick.bind()}
         />
       </div>
     );

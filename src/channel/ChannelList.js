@@ -27,6 +27,14 @@ class ChannelList extends Component {
     );
   }
 
+  handleClick(id) {
+    api.getVideo(id).then(
+      res => {
+        console.log(res);
+      }
+    );
+  }
+
   render() {
     return (
       <OwlCarousel options={options}>
@@ -36,6 +44,7 @@ class ChannelList extends Component {
                 key={channel._id}
                 src={channel.cover.default}
                 alt={channel.name}
+                onClick={this.handleClick.bind(this, channel._id)}
               />
             ))
           }

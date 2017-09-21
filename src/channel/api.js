@@ -12,6 +12,12 @@ class Api {
       res => res.json()
     );
   }
+
+  getVideo(id) {
+    return fetch(config.api.video+`/${id}`).then(
+      res => res.json()
+    );
+  }
 }
 
 export default Api;
