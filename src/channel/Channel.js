@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Channel extends Component {
   constructor(props) {
@@ -9,11 +10,12 @@ class Channel extends Component {
   render() {
     return (
       <div>
-        <img
-          src={this.state.src}
-          alt={this.state.alt}
-          onClick={this.state.onClick.bind()}
-        />
+        <Link to={this.state.path}>
+          <img
+            src={this.state.src}
+            alt={this.state.alt}
+          />
+        </Link>
       </div>
     );
   }
