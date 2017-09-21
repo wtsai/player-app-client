@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
-import Api from './api';
+import Api from '../Api';
 import Channel from './Channel';
 
 const api = new Api();
