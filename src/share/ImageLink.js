@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
-class Channel extends Component {
+class ImageLink extends Component {
   constructor(props) {
     super(props);
     this.state = props || [];
@@ -21,4 +21,4 @@ class Channel extends Component {
   }
 }
 
-export default Channel;
+export default ImageLink;

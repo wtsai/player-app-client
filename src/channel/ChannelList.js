@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
 import Api from '../Api';
-import Channel from './Channel';
+import ImageLink from '../share/ImageLink';
 
 const api = new Api();
 
@@ -40,7 +40,7 @@ class ChannelList extends Component {
         <OwlCarousel options={options}>
             {
               this.state.channels.map((channel) => (
-                <Channel
+                <ImageLink
                   key={channel._id}
                   src={channel.cover.default}
                   alt={channel.name}
