@@ -1,9 +1,8 @@
-.main {
+.main-Header {
   text-align: center;
   background-color: #222;
-  height: 70px;
-  padding: 20px;
+  height: 60px;
+  padding: 1px;
   color: white;
-  line-height: 50px;
-  margin-bottom: 20px;
+  line-height: 20px;
 }

@@ -36,18 +36,20 @@ class ChannelList extends Component {
     );
 
     return (
-      <OwlCarousel options={options}>
-          {
-            this.state.channels.map((channel) => (
-              <Channel
-                key={channel._id}
-                src={channel.cover.default}
-                alt={channel.name}
-                path={path(channel._id)}
-              />
-            ))
-          }
-      </OwlCarousel>
+      <div className="page">
+        <OwlCarousel options={options}>
+            {
+              this.state.channels.map((channel) => (
+                <Channel
+                  key={channel._id}
+                  src={channel.cover.default}
+                  alt={channel.name}
+                  path={path(channel._id)}
+                />
+              ))
+            }
+        </OwlCarousel>
+      </div>
     );
   }
 }
