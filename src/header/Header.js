@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <div className="main-Header">
         <ImageLink className="column-left" src={homeImage} alt="home" path={homePath}/>
-        <h2>Video Player</h2>
+        <h3>{this.props.title || 'Video Player'}</h3>
       </div>
     );
   }
