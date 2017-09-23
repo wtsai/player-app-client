@@ -14,6 +14,7 @@ class ImageLink extends Component {
           <img
             src={this.state.src}
             alt={this.state.alt}
+            className={this.state.className || ''}
           />
         </Link>
       </div>
