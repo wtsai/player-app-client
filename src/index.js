@@ -11,7 +11,7 @@ ReactDOM.render((
     <div>
       <Route path="/" component={Header}/>
       <Route exact path="/" component={ChannelList}/>
-      <Route path="/video" component={VideoPage}/>
+      <Route path="/video/:id" component={VideoPage}/>
     </div>
   </BrowserRouter>
 ), document.getElementById('root'))

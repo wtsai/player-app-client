@@ -7,7 +7,7 @@ class VideoPage extends Component {
   render() {
     return (
       <div className="main-VideoPage page">
-        <VideoList id={this.props.location.id}/>
+        <VideoList id={this.props.match.params.id}/>
       </div>
     );
   }

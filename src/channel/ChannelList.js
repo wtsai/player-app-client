@@ -28,12 +28,7 @@ class ChannelList extends Component {
   }
 
   render() {
-    const path = (id) => (
-      {
-        pathname: '/video',
-        id
-      }
-    );
+    const path = (id) => `/video/${id}`;
 
     return (
       <div className="page">
