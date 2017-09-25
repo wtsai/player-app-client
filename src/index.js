@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import ChannelList from './channel/ChannelList';
-import VideoPage from './video/VideoPage';
+import { renderRoutes } from 'react-router-config';
+
 import './index.css';
+import routes from './router.js'
 
 ReactDOM.render((
   <BrowserRouter>
-    <div>
-      <Route exact path="/" component={ChannelList}/>
-      <Route path="/video/:id" component={VideoPage}/>
-    </div>
+		{renderRoutes(routes)}
   </BrowserRouter>
 ), document.getElementById('root'))

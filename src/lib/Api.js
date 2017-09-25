@@ -1,4 +1,4 @@
-import config from './ignore/config';
+import config from '../ignore/config';
 
 class Api {
   getChannel() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Api from '../Api';
+import Api from '../../lib/Api';
 import Header from '../header/Header';
 import VideoList from './VideoList';
 import './VideoPage.css';
