@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ImageLink from '../share/ImageLink';
-import homeImage from '../image/home.svg';
+import homeImage from '../../image/home.svg';
 import './Header.css';
 
 class Header extends Component {

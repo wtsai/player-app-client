@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
-import Api from '../Api';
+import Api from '../../lib/Api';
 import ImageLink from '../share/ImageLink';
 import Header from '../header/Header';
 
@@ -33,7 +33,7 @@ class ChannelList extends Component {
 
     return (
       <div className="page">
-        <Header/>
+	<Header/>
         <OwlCarousel options={options}>
             {
               this.state.channels.map((channel) => (
