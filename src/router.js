@@ -1,11 +1,11 @@
-import ChannelList from './components/channel/ChannelList';
+import LandingPage from './components/LandingPage';
 import VideoPage from './components/video/VideoPage';
 
 const routes = [
     {
         path: '/',
         exact: true,
-        component: ChannelList
+        component: LandingPage
     },
     {
         path: '/video/:id',
