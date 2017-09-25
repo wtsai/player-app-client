@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
 import Api from '../../lib/Api';
 import ImageLink from '../share/ImageLink';
-import Header from '../header/Header';
 
 const api = new Api();
 
@@ -32,8 +31,7 @@ class ChannelList extends Component {
     const path = (id) => `/video/${id}`;
 
     return (
-      <div className="page">
-	<Header/>
+      <div>
         <OwlCarousel options={options}>
             {
               this.state.channels.map((channel) => (
