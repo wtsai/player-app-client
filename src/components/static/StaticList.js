@@ -20,13 +20,11 @@ class StaticList extends Component {
 		if(this.state.videolist === false){
 			const { windowWidth, windowHeight } = this.props;
 			const skipNum = 0;
-			console.log('[componentDidUpdate]width: ' + windowWidth + '. height: ' + windowHeight);
 			if( windowWidth > 0 && windowHeight > 0 ){
 				var width_count = parseInt(windowWidth/parseInt(config.icon.width, 10), 10);
 				var height_count = parseInt((windowHeight-config.mainHeader.height)/parseInt(config.icon.height, 10), 10);
 				var total = width_count*height_count;
 				var Left_padding = (windowWidth-(width_count * parseInt(config.icon.width, 10)))/2;
-				console.log('Left_padding: ' + Left_padding);
 		    api.getChannelByLimit(skipNum,total).then(
 		      res => {
 		        this.setState({channels: res});
@@ -47,6 +45,7 @@ class StaticList extends Component {
           this.state.channels.map((channel) => (
             <ImageIcon
               key={channel._id}
+              alt={channel._id}
               src={channel.cover.default}
               title={channel.name}
               path={path(channel._id)}

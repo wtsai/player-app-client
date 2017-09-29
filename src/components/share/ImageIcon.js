@@ -13,6 +13,7 @@ class ImageLink extends Component {
         <span className="Imagelist">
           <img
             src={this.state.src}
+            alt={this.state.alt}
             title={this.state.title}
             className={this.state.className || ''}
           />
