@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Plyr from 'react-plyr';
-import 'plyr/dist/plyr.css';
+import ReactPlayer from 'react-player';
+import windowSize from 'react-window-size';
 
 class Video extends Component {
   constructor(props) {
@@ -10,14 +10,16 @@ class Video extends Component {
 
   render() {
     return (
-      <div className="video">
-        <Plyr
-          type={this.state.type}
-          videoId={this.state.videoId}
+      <div >
+        <ReactPlayer
+          width={this.props.windowWidth}
+          height={this.props.windowHeight}
+          className="video"
+          url={`https://www.youtube.com/watch?v=${this.state.videoId}`}
         />
       </div>
     );
   }
 }
 
-export default Video;
+export default windowSize(Video);
