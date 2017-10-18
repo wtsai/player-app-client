@@ -9,6 +9,7 @@
     "react-player": "^0.24.6",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
+    "react-select": "^1.0.0-rc.10",
     "react-window-size": "^1.0.1"
   },
   "scripts": {

@@ -1,6 +1,7 @@
+// deprecated
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
-import Video from './Video'
+import Video from './Video';
 
 const options = {
     items: 1,

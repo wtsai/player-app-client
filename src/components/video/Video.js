@@ -3,11 +3,6 @@ import ReactPlayer from 'react-player';
 import windowSize from 'react-window-size';
 
 class Video extends Component {
-  constructor(props) {
-    super(props);
-    this.state = props || {};
-  }
-
   render() {
     return (
       <div >
@@ -15,7 +10,7 @@ class Video extends Component {
           width={this.props.windowWidth}
           height={this.props.windowHeight}
           className="video"
-          url={`https://www.youtube.com/watch?v=${this.state.videoId}`}
+          url={`https://www.youtube.com/watch?v=${this.props.videoId}`}
         />
       </div>
     );
