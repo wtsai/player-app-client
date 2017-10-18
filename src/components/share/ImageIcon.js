@@ -10,14 +10,14 @@ class ImageLink extends Component {
   render() {
     return (
       <Link to={this.state.path}>
-        <span className="Imagelist">
+          <span className="Imagelist">
           <img
             src={this.state.src}
-            alt={this.state.alt}
             title={this.state.title}
+            alt={this.state.alt}
             className={this.state.className || ''}
           />
-        </span>
+          </span>
       </Link>
     );
   }

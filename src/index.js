@@ -5,9 +5,11 @@ import { renderRoutes } from 'react-router-config';
 
 import './index.css';
 import routes from './router.js'
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
   <BrowserRouter>
 		{renderRoutes(routes)}
   </BrowserRouter>
 ), document.getElementById('root'))
+registerServiceWorker();

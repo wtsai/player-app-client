@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
-import OwlCarousel from 'react-owl-carousel2';
 import Api from '../../lib/Api';
 import ImageLink from '../share/ImageLink';
 
 const api = new Api();
-
-const options = {
-    items: 5,
-    margin: 10,
-    nav: false,
-    rewind: true,
-    loop: true,
-};
 
 class ChannelList extends Component {
   constructor(props) {
@@ -23,6 +14,7 @@ class ChannelList extends Component {
     api.getChannelByLimit(3,20).then(
       res => {
         this.setState({channels: res});
+
       }
     );
   }
@@ -32,7 +24,6 @@ class ChannelList extends Component {
 
     return (
       <div>
-        <OwlCarousel options={options}>
             {
               this.state.channels.map((channel) => (
                 <ImageLink
@@ -43,7 +34,6 @@ class ChannelList extends Component {
                 />
               ))
             }
-        </OwlCarousel>
       </div>
     );
   }
