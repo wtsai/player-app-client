@@ -11,6 +11,8 @@ class Video extends Component {
           height={this.props.windowHeight}
           className="video"
           url={`https://www.youtube.com/watch?v=${this.props.videoId}`}
+          onEnded={this.props.onEnded || undefined}
+          playing={this.props.playing || false }
         />
       </div>
     );
