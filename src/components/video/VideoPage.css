@@ -6,3 +6,16 @@
   margin:auto;
   width:84vw;
 }
+
+.main-Knob {
+  text-align: center;
+  margin: 1vw;
+  margin-top: 0px;
+}
+
+.main-Selector {
+  float: right;
+  width:90vw;
+  margin: 1vw;
+  margin-left: 0px;
+}

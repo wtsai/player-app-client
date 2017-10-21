@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Knob from 'react-canvas-knob';
 import Api from '../../lib/Api';
 import Header from '../header/Header';
 import Selector from '../share/Selector';
@@ -43,7 +44,11 @@ class VideoPage extends Component {
     }
   }
 
-  handleChange(newValue) {
+  handleKnobChange(newValue) {
+    this.setState({playing: false, playingVideo: this.state.videos[newValue-1]});
+  }
+
+  handleSelectorChange(newValue) {
     this.setState({playing: false, playingVideo: newValue});
   }
 
@@ -61,11 +66,28 @@ class VideoPage extends Component {
     return (
       <div className="main-VideoPage page">
         <Header title={this.state.channel.name}/>
-        <Selector
-          value={this.state.playingVideo.value}
-          options={this.state.videos}
-          onChange={this.handleChange.bind(this)}
-        />
+        <div>
+          <Knob
+            className="main-Knob"
+            bgColor="#000000"
+            cursor={true}
+            fgColor="#FFFFFF"
+            inputColor="#000000"
+            min={1}
+            max={this.state.videos.length}
+            onChange={this.handleKnobChange.bind(this)}
+            value={this.state.playingVideo.labelKey+1}
+            width={60}
+            height={60}
+          />
+          <Selector
+            className="main-Selector"
+            autosize={false}
+            value={this.state.playingVideo.value}
+            options={this.state.videos}
+            onChange={this.handleSelectorChange.bind(this)}
+          />
+        </div>
         <Video
           videoId={this.state.playingVideo.value}
           onEnded={this.handleEnded.bind(this)}
