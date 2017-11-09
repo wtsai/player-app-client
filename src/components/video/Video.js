@@ -13,7 +13,7 @@ class Video extends Component {
           url={`https://www.youtube.com/watch?v=${this.props.videoId}`}
           onEnded={this.props.onEnded || undefined}
           playing={this.props.playing || false }
-        />
+          />
       </div>
     );
   }

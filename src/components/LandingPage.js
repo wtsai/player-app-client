@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import StaticList from './static/StaticList';
+//import StaticPage from './static/StaticPage';
+import DynamicPage from './dynamic/dynamicPage';
 import Header from './header/Header';
 
 class LandingPage extends Component {
@@ -7,7 +8,7 @@ class LandingPage extends Component {
     return (
       <div>
         <Header/>
-        <StaticList/>
+        <DynamicPage/>
       </div>
     );
   }

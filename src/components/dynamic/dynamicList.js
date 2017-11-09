@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ImageIcon from '../share/ImageIcon';
-import './StaticList.css';
+import './dynamicList.css';
 
-class StaticList extends Component {
+class dynamicList extends Component {
   render() {
     let path = (id) => `/channel/${id}`;
     let videolist = [];
@@ -16,7 +16,7 @@ class StaticList extends Component {
             title={channel.name}
             path={path(channel._id)}
             className='ImageIcon'
-          />
+            />
         )
       ))
     }
@@ -29,4 +29,4 @@ class StaticList extends Component {
   }
 }
 
-export default StaticList;
+export default dynamicList;

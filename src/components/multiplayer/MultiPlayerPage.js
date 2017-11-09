@@ -5,8 +5,8 @@ import MultiPlayerList from './MultiPlayerList';
 
 const api = new Api();
 
-function getVideo(id) {
-  return api.getVideo(id).then(
+function getChannel(id) {
+  return api.getLocalVideo(id).then(
     res => res
   );
 }
@@ -14,14 +14,16 @@ function getVideo(id) {
 class MultiPlayerPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {channel: {contents: []}};
+    this.state = {
+      videolist: {}
+    };
   }
 
   componentWillMount() {
     if (this.props.match.params.id) {
-      getVideo(this.props.match.params.id).then(
+      getChannel(this.props.match.params.id).then(
         res => {
-          this.setState({channel: res.channel});
+          this.setState({videolist: res.channel});
         }
       );
     }
@@ -30,8 +32,8 @@ class MultiPlayerPage extends Component {
   render() {
     return (
       <div>
-        <Header title={this.state.channel.name}/>
-        <MultiPlayerList channel={this.state.channel}/>
+        <Header title={this.state.videolist.name}/>
+        <MultiPlayerList videolist={this.state.videolist}/>
       </div>
     );
   }

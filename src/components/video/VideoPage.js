@@ -10,7 +10,7 @@ import 'react-select/dist/react-select.css';
 const api = new Api();
 
 function getVideo(id) {
-  return api.getVideo(id).then(
+  return api.getLocalVideo(id).then(
     res => res
   );
 }
@@ -79,20 +79,20 @@ class VideoPage extends Component {
             value={this.state.playingVideo.labelKey+1}
             width={60}
             height={60}
-          />
+            />
           <Selector
             className="main-Selector"
             autosize={false}
             value={this.state.playingVideo.value}
             options={this.state.videos}
             onChange={this.handleSelectorChange.bind(this)}
-          />
+            />
         </div>
         <Video
           videoId={this.state.playingVideo.value}
           onEnded={this.handleEnded.bind(this)}
           playing={this.state.playing}
-        />
+          />
       </div>
     );
   }

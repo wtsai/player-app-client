@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
   <BrowserRouter>
-		{renderRoutes(routes)}
+    {renderRoutes(routes)}
   </BrowserRouter>
 ), document.getElementById('root'))
 registerServiceWorker();

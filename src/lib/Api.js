@@ -1,20 +1,38 @@
 import config from '../ignore/config';
 
 class Api {
-  getChannel() {
-    return fetch(config.api.channel).then(
+  getDynamicChannels(skip, total) {
+    return fetch(config.api.higgstv.channels+`/${skip}/${total}`).then(
       res => res.json()
     );
   }
 
-  getChannelByLimit(skipNum, imitNum) {
-    return fetch(config.api.channel+`/${skipNum}/${imitNum}`).then(
+  getDynamicVideo(id) {
+    return fetch(config.api.higgstv.channel+`/${id}`).then(
       res => res.json()
     );
   }
 
-  getVideo(id) {
-    return fetch(config.api.video+`/${id}`).then(
+  getEC2Channels(skip, total) {
+    return fetch(config.api.ec2.channels+`/${skip}/${total}`).then(
+      res => res.json()
+    );
+  }
+
+  getEC2Video(id) {
+    return fetch(config.api.ec2.channel+`/${id}`).then(
+      res => res.json()
+    );
+  }
+
+  getLocalChannels(skip, total) {
+    return fetch(config.api.local.channels+`/${skip}/${total}`).then(
+      res => res.json()
+    );
+  }
+
+  getLocalVideo(id) {
+    return fetch(config.api.local.channel+`/${id}`).then(
       res => res.json()
     );
   }
