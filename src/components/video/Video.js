@@ -8,7 +8,7 @@ class Video extends Component {
       <div >
         <ReactPlayer
           width={this.props.windowWidth}
-          height={this.props.windowHeight}
+          height={this.props.windowHeight-60}
           className="video"
           url={`https://www.youtube.com/watch?v=${this.props.videoId}`}
           onEnded={this.props.onEnded || undefined}

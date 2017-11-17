@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Knob from 'react-canvas-knob';
 import Api from '../../lib/Api';
-import Header from '../header/Header';
-import Selector from '../share/Selector';
+import ImageLink from '../share/ImageLink';
+import homeImage from '../../image/home.svg';
+import Selector from 'react-select';
+import 'react-select/dist/react-select.css';
 import Video from './Video';
 import './VideoPage.css';
-import 'react-select/dist/react-select.css';
 
 const api = new Api();
 
@@ -25,17 +26,19 @@ class VideoPage extends Component {
     if (this.props.match.params.id) {
       getVideo(this.props.match.params.id).then(
         res => {
-          const channel = res.channel;
-          const videos = channel.contents.map((video, index) => {
-            return Object.assign({}, {value: video.youtube_id, label: video.name, labelKey: index});
+          let channel = res.channel;
+          let videos = channel.contents_order.map((order, index) => {
+            let findvideo = channel.contents.find(function(item, index, array){
+              return item._id === order;
+            });
+            return Object.assign({}, {value: findvideo.youtube_id, label: findvideo.name, labelKey: index});
           });
-
           this.setState({
             channel,
             playingVideo: {
-              value: channel.contents[0].youtube_id,
-              label: channel.contents[0].name,
-              labelKey: 0,
+              value: videos[0].value,
+              label: videos[0].label,
+              labelKey: videos[0].labelKey,
             },
             videos,
           });
@@ -63,29 +66,30 @@ class VideoPage extends Component {
   }
 
   render() {
+    const homePath = '/';
     return (
       <div className="main-VideoPage page">
-        <Header title={this.state.channel.name}/>
-        <div>
-          <Knob
-            className="main-Knob"
-            bgColor="#000000"
-            cursor={true}
-            fgColor="#FFFFFF"
-            inputColor="#000000"
-            min={1}
-            max={this.state.videos.length}
-            onChange={this.handleKnobChange.bind(this)}
-            value={this.state.playingVideo.labelKey+1}
-            width={60}
-            height={60}
-            />
-          <Selector
-            className="main-Selector"
-            autosize={false}
-            value={this.state.playingVideo.value}
-            options={this.state.videos}
-            onChange={this.handleSelectorChange.bind(this)}
+        <div className="playing-Header">
+          <ImageLink className="playing-column-left" src={homeImage} alt="home" path={homePath}/>
+          <span className="playing-Selector">
+              <Selector
+                value={this.state.playingVideo.value}
+                options={this.state.videos}
+                onChange={this.handleSelectorChange.bind(this)}
+              />
+          </span>
+            <Knob
+              className="main-Knob-right"
+              bgColor="#FFFFFF"
+              cursor={true}
+              fgColor="#000000"
+              inputColor="#FFFFFF"
+              min={1}
+              max={this.state.videos.length}
+              onChange={this.handleKnobChange.bind(this)}
+              value={this.state.playingVideo.labelKey+1}
+              width={90}
+              height={90}
             />
         </div>
         <Video
